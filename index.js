@@ -87,6 +87,20 @@ app.post('/auth', (request, response)=> {
   }
 });  
 
+
+//middleware
+var authenticateRequest =  (req, res, next)=> {
+  if (!req.cookies.loggedIn) {
+    res.redirect('/login');
+  } else {
+    next();
+  }
+};
+
+app.use(authenticateRequest);
+
+
+//HOME
 app.get('/home', (request, response)=> {
     if (request.session.loggedin) {
         response.send('Welcome, ' + request.session.username + '!');
@@ -113,7 +127,6 @@ app.post('/auth_logout', (request, response)=> {
 	});
 });
 
-//middleware
 //explore sockets
 
 app.listen(3000, () => {
