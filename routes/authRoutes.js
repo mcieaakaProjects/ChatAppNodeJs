@@ -7,13 +7,11 @@ const connection = require('../dbConnection');
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../signup.html'));
 });
-
 router.post('/auth_signup', async (req, res) => {
   try {
     const { username, mailid, password } = req.body;
     const saltRounds = 10;
     const passwordHash = await bcrypt.hash(password, saltRounds);
-
     if (username && mailid && password) {
       await connection.promise().query('INSERT INTO userdetails VALUES (0, ?, ?, ?)', [username, passwordHash, mailid]);
       req.session.loggedin = true;
@@ -58,7 +56,7 @@ router.post('/auth', async (req, res) => {
   });
 
   router.get('/logout', (req, res) => {
-    res.sendFile(path.join(__dirname, '/logout.html'));
+    res.sendFile(path.join(__dirname, '../logout.html'));
   });
   router.post('/auth_logout', (req, res) => {
     req.session.destroy(function (error) {
