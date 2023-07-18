@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>User Profile</title>
+        <link rel="stylesheet" href="/styles/userProfile.css">
+	</head>
+	<body>
+		<div class="userProfile-form">
+			<h1>User Profile</h1>
+            <form action="/auth_userProfile" method="POST">
+                <input type="text" name="current_username" placeholder="Current Username">
+                <input type="text" name="new_username" placeholder="New Username">
+                <input type="email" name="mailid" placeholder="New Email Id">
+                <input type="hidden" name="action" value="save"> <!-- Hidden field for save action -->
+                <input type="submit" name="save" value="Save">
+              </form>
+        
+              <form action="/auth_userProfile" method="POST">
+                <input type="hidden" name="action" value="logout"> <!-- Hidden field for logout action -->
+                <input type="submit" name="logout" value="Logout">
+              </form>
+		</div>
+	</body>
+</html>

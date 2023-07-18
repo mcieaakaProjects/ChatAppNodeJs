@@ -1,0 +1,22 @@
+.landingPage-form {
+    width: 300px;
+    margin: 0 auto;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+.landingPage-form h1 {
+    text-align: center;
+    color: #070707;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+}
+.landingPage-form input[name="edit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #2a779b;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 15px;
+}
