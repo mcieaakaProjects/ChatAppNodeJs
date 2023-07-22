@@ -8,7 +8,6 @@ router.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../pageFiles/login.html'));
   });
 router.post('/auth', async (req, res) => {
-      try {
         const { username, password } = req.body;
         if (username && password) {
           const [results] = await connection.promise().query('SELECT * FROM userdetails WHERE username = ?', [username]);
@@ -19,7 +18,7 @@ router.post('/auth', async (req, res) => {
               req.session.loggedin = true;
               req.session.username = username;
               res.cookie('loggedIn', true);
-              res.redirect('/landingPage');
+              res.redirect('/userProfile');
             } else {
               res.send('Incorrect Username and/or Password!');
             }
@@ -29,9 +28,6 @@ router.post('/auth', async (req, res) => {
         } else {
           res.send('Please enter Username and Password!');
         }
-      } catch (error) {
-        res.send('An error occurred during login: ' + error);
-      }
- });
+      });
     
 module.exports = router;

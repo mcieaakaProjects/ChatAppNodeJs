@@ -9,6 +9,7 @@ const logoutRoute = require('./routes/logoutRoute');
 const landingPageRoute = require('./routes/landingPageRoute');
 const userProfileRoute = require('./routes/userProfileRoute');
 const homeRoute = require('./routes/homeRoute');
+const middleware= require('./pageFiles/middleware.js');
 
 const app = express();
 
@@ -29,7 +30,7 @@ app.use('/', logoutRoute);
 app.use('/', landingPageRoute);
 app.use('/', userProfileRoute);
 app.use('/', homeRoute);
-
+app.use('/', middleware);
 
 app.listen(3000, () => {
   console.log('Listening on 3000');
