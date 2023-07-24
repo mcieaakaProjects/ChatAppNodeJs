@@ -1,0 +1,43 @@
+.userProfile-form {
+    width: 300px;
+    margin: 0 auto;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+.userProfile-form h1 {
+    text-align: center;
+    color: #070707;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+}
+.userProfile-form input[type="email"],
+.userProfile-form input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dddddd;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-sizing:border-box;
+}
+.userProfile-form input[name="save"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #1ba300fb;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+.userProfile-form input[name="logout"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #d21b1b;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 15px;
+}
