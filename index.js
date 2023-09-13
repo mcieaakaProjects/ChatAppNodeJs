@@ -46,8 +46,6 @@ app.use('/', chatPageRoute);
 //   console.log('Listening on 3000');
 // });
 
-// signup/login---->welcome/landing page-->user profile-->logout
-
 const connectedClients = new Set();
 
 function broadcastChatMessage(senderSocket, senderId, senderUsername, message) {
@@ -94,7 +92,7 @@ io.on('connection', (socket) => {
       socket.user = {
         username: username,
       };
-      console.log('User authenticated with username:', username);
+      console.log('User authenticated with userId:', username);
     } else {
       socket.user = {
         username: null,

@@ -14,23 +14,6 @@ const username = getCookie('username') || '';
 socket.emit('authenticate', username);
 let lastSenderId = null; // Track the last sender's ID to avoid duplication
 
-
-//this is original
-// function appendMessage(sender, message, messageType) {
-//     const messageDiv = document.createElement('div');
-//     const messageClass = messageType === 'sent' ? 'sent' : 'received';
-//     messageDiv.innerHTML = `<div class="message ${messageClass}" ><strong>${sender}:</strong> ${message}</div><br>`;
-
-//     if (messageType === 'sent') {
-//         messageDiv.classList.add('sent-message');
-//       } else {
-//         messageDiv.classList.add('received-message');
-//       }
-
-//     chatWindow.appendChild(messageDiv);
-//     chatWindow.scrollTop = chatWindow.scrollHeight;
-// }
-
 function appendMessage(sender, message, messageType) {
     const messageDiv = document.createElement('div');
     const messageClass = messageType === 'sent' ? 'sent' : 'received';
@@ -80,4 +63,5 @@ socket.on('display messages', (messages) => {
       appendMessage(message.sender, message.text_body, 'received');
     });
   });
+  
   
