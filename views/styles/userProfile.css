@@ -41,3 +41,15 @@
     color: #ffffff;
     margin-top: 15px;
 }
+
+.userProfile-form input[name="chat"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #2a779b;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 15px;
+}
